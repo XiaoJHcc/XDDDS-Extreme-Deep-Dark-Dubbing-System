@@ -4,10 +4,13 @@
 <title>XDDDS | 究极深邃黑暗配音系统 | Extreme Deep Dark Dubbing System</title>
 
 <script>
+
+//音♂效
 function audio(id){
 	document.getElementById(id).load();document.getElementById(id).play();
 }
 
+//随机音♂效（列表）
 var AudioList = [];
 var AhhhhList = ['A1','A2','A3','A4','A5','A6','A7','A8','A11','A12','A13','A14','A15','U1','U2','U3','E1','E2','E3','E4'];
 var HuummList = ['H1','H2','H3'];
@@ -26,18 +29,22 @@ function Randio(arrayname){
 	var ID = arrayname[Ran];
 	audio(ID); 
 }
-function Music(){
-	var Ran3 = Math.random();
-	var Ran8 = Math.floor(Math.random()*8)+1;
-	if(Ran3<0.333){
-		fa(Ran8);
+
+//一键换♂装（不可逆）
+function DARK(){
+	var get_body = document.getElementsByTagName("body");
+	var get_piece = document.getElementsByClassName("piece");
+	var get_input = document.getElementsByTagName("input");
+	
+	get_body[0].style.background = "#000";
+	for (p=0; p<get_piece.length; p++) {
+		get_piece[p].style.background = "#111";
+		get_piece[p].style.boxShadow = "0px 10px 20px #333";
 	}
-	if(Ran3>0.333&&Ran3<0.666){
-		wu(Ran8);
+	for (i=0; i<get_input.length; i++) {
+		get_input[i].style.background = "#333";
+		get_input[i].style.color = "#CCC";
 	}
-	if(Ran3>0.666){
-		am(Ran8);
-	}	
 }
 </script>
 <!-- Fuck -->
@@ -183,15 +190,15 @@ function Music(){
 <style>
 body {
 	text-align:center;
-	background:#000;
+	background:#F9F9F9;
 }
 .piece {
 	float:left;
 	border:solid thin #999;
-	background:#111;
+	background:#EEE;
 	margin:16px;
 	padding:6px;
-	box-shadow:0px 10px 20px #333;
+	box-shadow:0px 10px 20px #999;
 	height:360px;
 }
 input {
@@ -200,8 +207,8 @@ input {
 	height:64px;
 	margin:4px;
 	font-size:18px;
-	background:#333;
-	color:#CCC;
+	background:#FFF;
+	color:#333;
 }
 .Van 
 {
@@ -235,7 +242,7 @@ input {
 
 <body>
 <div style="height:150px;">
-<input type="button" value="究极深邃黑暗配音系统" onclick="audio('X1')" style="width:50%;height:128px;font-size:24px;box-shadow:0px 10px 20px #666;" /><br />
+<input type="button" value="究极深邃黑暗配音系统" onclick="DARK()" style="width:50%;height:128px;font-size:24px;box-shadow:0px 10px 20px #666;" /><br />
 </div>
 <div class="piece">
 <input type="button" class="Van" onclick="audio('F1')" value="Oh♂I`m♂Fuking♂Coming" /><br />
@@ -310,9 +317,9 @@ input {
 <div class="piece">
 <input type="button" class="Bayolante" onclick="audio('BA1')" value="Hey Buddy You Got The Wrong Door" /><br />
 <input type="button" class="Bayolante" onclick="audio('BA2')" value="The Leather Clubs are Two Blocks Down" /><br />
-<input type="button" class="Bayolante" onclick="audio('BA3')" value="Oh Fa♂Q Leather♂Man" onclick="audio('BA3')" /><br />
-<input type="button" class="Bayolante" onclick="audio('BA4')" value="去♂年勃♂起至♂今" onclick="audio('BA4')" /><br />
-<input type="button" class="Bayolante" onclick="audio('BA5')" value="Come♂On Let`s♂Go" onclick="audio('BA5')" /><br />
+<input type="button" class="Bayolante" onclick="audio('BA3')" value="Oh Fa♂Q Leather♂Man" /><br />
+<input type="button" class="Bayolante" onclick="audio('BA4')" value="去♂年勃♂起至♂今" /><br />
+<input type="button" class="Bayolante" onclick="audio('BA5')" value="Come♂On Let`s♂Go" /><br />
 </div>
 <div class="piece">
 <input type="button" class="Van" onclick="audio('BA11')" value="Yeah♂No♂Problem" /><br />
